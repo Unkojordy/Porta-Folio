@@ -40,7 +40,7 @@ export default class BlogForm extends Component {
         { withCredentials: true }
       )
       .then(response => {
-        this.props.handleFeaturedImageDelete();
+        this.props.handleFeatureImageDelete();
       })
       .catch(error => {
         console.log("deleteImage error", error);
@@ -125,6 +125,7 @@ export default class BlogForm extends Component {
 
         if(this.props.editMode) {
           // update blog detail
+          this.props.handleUpdateFormSubmission(response.data.portfolio_blog);
         } else {
           this.props.handleSuccessfullFormSubmission(
             response.data.portfolio_blog
@@ -167,7 +168,7 @@ export default class BlogForm extends Component {
         <div className="one-column">
           <RichTextEditor
             handleRichTextEditorChange={this.handleRichTextEditorChange}
-            editMode={this.props.editMode}
+            editMode={this.props.editMode }
             contentToEdit={
               this.props.editMode && this.props.blog.content
                 ? this.props.blog.content

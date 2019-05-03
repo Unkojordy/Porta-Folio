@@ -35,6 +35,7 @@
         color: $grey;
         text-decoration: none;
         &:hover {
+          
           color: black;
         }
       }
@@ -44,6 +45,7 @@
       }
   
       .nav-link-active {
+        padding-bottom: 5px;
         border-bottom: 1px solid black;
         color: black;
       }
